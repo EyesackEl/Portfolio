@@ -5,7 +5,8 @@ import Portfolio from './pages/portfolio';
 import Resume from './pages/resume';
 import Contact from './pages/contact';
 
-export default function container() {
+
+export default function Container() {
     const [pageOn, setPageOn] = useState('About Me');
 
     const renderPage = () => {
@@ -31,5 +32,5 @@ export default function container() {
 
             {renderPage()}
         </div>
-    )
+    );
 }

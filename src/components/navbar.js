@@ -1,17 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-export default function NavBar({ pageOn, handlePageChange }) {
+export default function Navbar({ pageOn, handlePageChange }) {
+    const [burgerState, setBurgerState] = useState(false);
+
     return (
-        <nav class="navbar is-dark has-shadow" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-dark has-shadow" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <p class="navbar-item">The Isaac LaFlamme Experience</p>
-            <a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="true" data-target="navbarContent">
+            <a role="button"
+             onClick={() => !burgerState ? setBurgerState(true) : setBurgerState(false)}
+             className={!burgerState ? 'navbar-burger' : 'navbar-burger is-active'} aria-label="menu" aria-expanded="true" data-target="navbarContent">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div id="navbarContent" class="navbar-menu is-active">
+        <div id="navbarContent" 
+        className={!burgerState ? 'navbar-menu' : 'navbar-menu is-active'}>
             <div class="navbar-end">
                 <a 
                  href="#about" 
