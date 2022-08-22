@@ -4,16 +4,16 @@ export default function Navbar({ pageOn, handlePageChange }) {
     const [burgerState, setBurgerState] = useState(false);
 
     return (
-    <nav class="navbar is-dark has-shadow" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <p class="navbar-item">The Isaac LaFlamme Experience</p>
-            <a role="button"
+    <nav class="navbar is-dark has-shadow column is-narrow" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand content">
+            <h4 class="navbar-item">The Isaac LaFlamme Experience</h4>
+            <btn role="button"
              onClick={() => !burgerState ? setBurgerState(true) : setBurgerState(false)}
              className={!burgerState ? 'navbar-burger' : 'navbar-burger is-active'} aria-label="menu" aria-expanded="true" data-target="navbarContent">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
-            </a>
+            </btn>
         </div>
         <div id="navbarContent" 
         className={!burgerState ? 'navbar-menu' : 'navbar-menu is-active'}>
@@ -33,9 +33,9 @@ export default function Navbar({ pageOn, handlePageChange }) {
                     Portfolio
                 </a>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
+                    <btn class="navbar-link">
                         Like What You See?
-                    </a>
+                    </btn>
                     <div class="navbar-dropdown">
                         <a 
                          href="#contact" 
