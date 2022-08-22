@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AboutMe({ handlePageChange }) {
     return (
-        <div class='content column'>
+        <div className='content column'>
             <h1>The story of the one and only...</h1>
             <br></br>
             <p>

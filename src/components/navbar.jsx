@@ -4,20 +4,20 @@ export default function Navbar({ pageOn, handlePageChange }) {
     const [burgerState, setBurgerState] = useState(false);
 
     return (
-    <nav class="navbar is-dark has-shadow column is-narrow" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand content">
-            <h4 class="navbar-item">The Isaac LaFlamme Experience</h4>
-            <btn role="button"
+    <nav className="navbar is-dark has-shadow column is-narrow" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand content">
+            <h3 className="navbar-item pt-3">The Isaac LaFlamme Experience</h3>
+            <button
              onClick={() => !burgerState ? setBurgerState(true) : setBurgerState(false)}
              className={!burgerState ? 'navbar-burger' : 'navbar-burger is-active'} aria-label="menu" aria-expanded="true" data-target="navbarContent">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
-            </btn>
+            </button>
         </div>
         <div id="navbarContent" 
         className={!burgerState ? 'navbar-menu' : 'navbar-menu is-active'}>
-            <div class="navbar-end">
+            <div className="navbar-end">
                 <a 
                  href="#about" 
                  onClick={() => handlePageChange('About Me')}
@@ -32,11 +32,11 @@ export default function Navbar({ pageOn, handlePageChange }) {
                 >
                     Portfolio
                 </a>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <btn class="navbar-link">
+                <div className="navbar-item has-dropdown is-hoverable">
+                    <a className="navbar-link" href='#they-like-what-they-see'>
                         Like What You See?
-                    </btn>
-                    <div class="navbar-dropdown">
+                    </a>
+                    <div className="navbar-dropdown">
                         <a 
                          href="#contact" 
                          onClick={() => handlePageChange('Contact')}

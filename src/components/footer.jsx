@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Footer() {
     return (
-    <footer class='footer column is-narrow'>
-        <div class='content has-text-centered'>
+    <footer className='footer column is-narrow'>
+        <div className='content has-text-centered'>
             <a href="https://bulma.io">
                 <img
                     src="https://bulma.io/images/made-with-bulma.png"

@@ -35,12 +35,12 @@ export default function Container() {
     const handlePageChange = (page) => setPageOn(page);
 
     return (
-        <body class='columns is-flex-direction-column' style={styles.fullHeight}>
+        <div className='columns is-flex-direction-column' style={styles.fullHeight}>
             <NavBar pageOn = {pageOn} handlePageChange={handlePageChange} />
 
             {renderPage()}
 
             <Footer />
-        </body>
+        </div>
     );
 }
