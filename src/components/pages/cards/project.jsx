@@ -19,7 +19,7 @@ export default function Project({ img, name, gh, deployed }) {
                       style={hover ? {filter: 'blur(1px)'} : null}
                     />
                     <div
-                    className='button is-primary mt-6'
+                    className='button is-link mt-6'
                     style={hover ? {position: 'absolute', left: 0, right: 0, marginLeft: 'auto', marginRight: 'auto', width: '150px' } : {display: 'none'}}>
                         View Deployment!
                     </div>
