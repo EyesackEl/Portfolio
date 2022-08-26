@@ -41,7 +41,7 @@ export default function Contact() {
                     <div className="field">
                         <label className="label">Email</label>
                         <div className="control has-icons-right">
-                            <input id='emailInput' onChange={() => checkEmail()} className={ emailValid ? 'input' : 'input is-danger' } type="text" placeholder="Email"/>
+                            <input id='emailInput' onMouseLeave={() => checkEmail()} className={ emailValid ? 'input' : 'input is-danger' } type="text" placeholder="Email"/>
                             <span className="icon is-small is-right">
                                 {emailValid ?
                                 <i/> :
@@ -56,7 +56,7 @@ export default function Contact() {
                     <div className="field">
                         <label className="label">Message</label>
                         <div className="control">
-                            <textarea id='messageInput' onChange={() => checkMessage()} className={messageValid ? 'textarea' : "textarea is-danger"} placeholder="Whisper sweet nothings into my inbox..."/>
+                            <textarea id='messageInput' onMouseLeave={() => checkMessage()} className={messageValid ? 'textarea' : "textarea is-danger"} placeholder="Whisper sweet nothings into my inbox..."/>
                         </div>
                         {messageValid ?
                          <p/> :
