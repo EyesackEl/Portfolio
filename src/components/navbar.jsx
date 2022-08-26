@@ -15,6 +15,7 @@ export default function Navbar({ pageOn, handlePageChange }) {
                 <span aria-hidden="true"></span>
             </button>
         </div>
+        
         <div id="navbarContent" 
         className={!burgerState ? 'navbar-menu' : 'navbar-menu is-active'}>
             <div className="navbar-end">

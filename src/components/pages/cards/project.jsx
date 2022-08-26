@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function Project({ img, name, caption, gh, deployed }) {
-    // const styles = {
-    //     image: {
-    //         width: 
-    //     }
-    // }
+export default function Project({ img, name, gh, deployed }) {
+    const [hover, setHover] = useState(false)
 
     return(
         <div className='content column is-6 px-5 mx-1'>
-
-            <h6 className='has-text-centered'>{name}</h6>
-            <div>
-                <img src={img} alt='Example of my work'/>
+            <div className='box pb-6 has-text-centered' style={{position: 'relative', maxWidth: '100%'}}>
+                <h6 className='has-text-centered'>{name}</h6>
+                <a 
+                  
+                  href={deployed} 
+                  target='_blank'
+                  onMouseEnter = {() => setHover(true)}
+                  onMouseLeave = {() => setHover(false)}>
+                    <img 
+                      src={img}
+                      alt='Example of my work'
+                      style={hover ? {filter: 'blur(1px)'} : null}
+                    />
+                    <div
+                    className='button '
+                    style={hover ? {position: 'absolute', left: 0, right: 0, marginLeft: 'auto', marginRight: 'auto', width: '150px' } : {display: 'none'}}>
+                        View Deployment!
+                    </div>
+                </a>
+                <span className='icon is-pulled-right mt-2'>
+                    <a href={gh} target='_blank'>
+                        <i className='fa fa-2x fa-github'/>
+                    </a>
+                </span>
             </div>
-            <figcaption>{caption}</figcaption>
-            <span className='icon is-large'>
-              <a href={gh} target='_blank'>
-                <i class='fa fa-2x fa-github'/>
-              </a>
-            </span>
+
 
         </div>
     )
