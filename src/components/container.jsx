@@ -18,7 +18,7 @@ export default function Container() {
 
     const renderPage = () => {
         if (pageOn === 'About Me') {
-            return <About handlePageChange={handlePageChange}/>;
+          return <About handlePageChange={handlePageChange} />;
         }
         else if (pageOn === 'Portfolio') {
             return <Portfolio />;

@@ -24,52 +24,76 @@ export default function Contact() {
     };
 
     return (
-        <div className='column content'>
-            <div className='columns is-centered'>
-              <div className='column is-7'>
-                <div className='box'>
-                  <h1 className='has-text-centered'>Reach Out!</h1>
-                  <form >
-
-                    <div className="field">
-                        <label className="label">Name</label>
-                        <div className="control">
-                            <input className="input" type="text" placeholder="No judgement"/>
-                        </div>
-                    </div>
-
-                    <div className="field">
-                        <label className="label">Email</label>
-                        <div className="control has-icons-right">
-                            <input id='emailInput' onMouseLeave={() => checkEmail()} className={ emailValid ? 'input' : 'input is-danger' } type="text" placeholder="Email"/>
-                            <span className="icon is-small is-right">
-                                {emailValid ?
-                                <i/> :
-                                <i className="fas fa-exclamation-triangle"/>}
-                            </span>
-                        </div>
-                        {emailValid ?
-                         <p/> :
-                        <p className='help is-danger'>Please enter a valid email address</p> }
-                    </div>
-
-                    <div className="field">
-                        <label className="label">Message</label>
-                        <div className="control">
-                            <textarea id='messageInput' onMouseLeave={() => checkMessage()} className={messageValid ? 'textarea' : "textarea is-danger"} placeholder="Whisper sweet nothings into my inbox..."/>
-                        </div>
-                        {messageValid ?
-                         <p/> :
-                         <p className='help is-danger'>Please include a message</p>
-                        }
-                    </div>
-                    
-                  </form>
-
-                  <button className='button is-link mt-3' style={contactValid ? {} :{display: 'none'}}>Submit</button>
+      <div className='column content'>
+        <div className='columns is-centered'>
+          <div className='column is-7'>
+            <div className='box'>
+              <h1 className='has-text-centered'>Reach Out!</h1>
+              <form>
+                <div className='field'>
+                  <label className='label'>Name</label>
+                  <div className='control'>
+                    <input className='input' type='text' placeholder='Name' />
+                  </div>
                 </div>
-              </div>
+
+                <div className='field'>
+                  <label className='label'>Email</label>
+                  <div className='control has-icons-right'>
+                    <input
+                      id='emailInput'
+                      onMouseLeave={() => checkEmail()}
+                      onChange={() => checkEmail()}
+                      className={emailValid ? 'input' : 'input is-danger'}
+                      type='text'
+                      placeholder='Email'
+                    />
+                    <span className='icon is-small is-right'>
+                      {emailValid ? (
+                        <i />
+                      ) : (
+                        <i className='fas fa-exclamation-triangle' />
+                      )}
+                    </span>
+                  </div>
+                  {emailValid ? (
+                    <p />
+                  ) : (
+                    <p className='help is-danger'>
+                      Please enter a valid email address
+                    </p>
+                  )}
+                </div>
+
+                <div className='field'>
+                  <label className='label'>Message</label>
+                  <div className='control'>
+                    <textarea
+                      id='messageInput'
+                      onChange={() => checkMessage()}
+                      className={
+                        messageValid ? 'textarea' : 'textarea is-danger'
+                      }
+                      placeholder='Whisper sweet nothings into my inbox...'
+                    />
+                  </div>
+                  {messageValid ? (
+                    <p />
+                  ) : (
+                    <p className='help is-danger'>Please include a message</p>
+                  )}
+                </div>
+              </form>
+
+              <button
+                className='button is-link mt-3'
+                style={contactValid ? {} : { display: 'none' }}
+              >
+                Submit
+              </button>
             </div>
+          </div>
         </div>
-    )
+      </div>
+    );
 };
